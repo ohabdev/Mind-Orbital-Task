@@ -1,0 +1,77 @@
+import { RouteInfo } from "./sidebar.metadata";
+
+export const ROUTES: RouteInfo[] = [
+  {
+    path: "/starter",
+    title: "Dashboard",
+    icon: "fa fa-dashboard",
+    class: "",
+    label: "",
+    labelClass: "",
+    extralink: false,
+    submenu: [],
+  },
+  {
+    path: "/users/list",
+    title: "Users",
+    icon: "fa fa-users",
+    class: "has-arrow",
+    label: "",
+    labelClass: "",
+    extralink: false,
+    submenu: [
+      {
+        path: "/users/list",
+        title: "List users",
+        icon: "fa fa-users",
+        class: "",
+        label: "",
+        labelClass: "",
+        extralink: false,
+        submenu: [],
+      },
+      {
+        path: "/users/create",
+        title: "Create new",
+        icon: "fa fa fa-user-plus",
+        class: "",
+        label: "",
+        labelClass: "",
+        extralink: false,
+        submenu: [],
+      },
+    ],
+  },
+  {
+    path: "/shops",
+    title: "Shops",
+    icon: "fa fa-shopping-cart",
+    class: "has-arrow",
+    label: "",
+    labelClass: "",
+    extralink: false,
+    submenu: [
+      {
+        path: "/shops",
+        title: "Shops",
+        icon: "fa fa-shopping-cart",
+        class: "",
+        label: "",
+        labelClass: "",
+        extralink: false,
+        submenu: [],
+      },
+      {
+        path: "/shops/create",
+        title: "Shop Create",
+        icon: "fa fa-plus",
+        class: "",
+        label: "",
+        labelClass: "",
+        extralink: false,
+        submenu: [],
+      },
+    ],
+  },
+  
+];

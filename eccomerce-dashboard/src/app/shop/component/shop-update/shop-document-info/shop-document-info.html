@@ -1,0 +1,70 @@
+<form role="form" #frm="ngForm" (submit)="submit(frm)" ngNativeValidate method="post">
+  <div class="row">
+    <div class="col col-md-12">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label> National ID No : </label>
+            <input type="text" class="form-control" disabled placeholder="Enter National ID No" [(ngModel)]="shop.nidno"
+              name="nidno" #nidno="ngModel" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Trade License No : </label>
+            <input type="text" class="form-control" readonly placeholder="Trade License No"
+              [(ngModel)]="shop.tradeLicenseNumber" name="tradeLicenseNumber" #tradeLicenseNumber="ngModel" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-12">
+      <div class="row">
+        <div class="col col-md-6">
+          <div class="form-group">
+            <label>NID Front : </label> <br>
+            <a [href]="shop.nidFrontVerificationIssue.fileUrl" target="_blank">
+              <img [src]="shop.nidFrontVerificationIssue.fileUrl" width="100%" height="500px">
+            </a>
+          </div>
+        </div>
+        <div class="col col-md-6">
+          <div class="form-group">
+            <label>NID Back : </label> <br>
+            <a [href]="shop.nidBackVerificationIssue.fileUrl" target="_blank">
+              <img [src]="shop.nidBackVerificationIssue.fileUrl" width="100%" height="500px">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Scan Copy Of Trade License : </label> <br>
+            <span *ngFor="let scannedCopy of shop.scannedCopyOfTL; let i = index">
+              <a [href]="scannedCopy.fileUrl" target="_blank">
+                <img [src]="scannedCopy.fileUrl" style="margin-bottom: 15px;" width="100%" height="500px">
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6" *ngIf="shop.proofIssue.fileUrl">
+          <div class="form-group">
+            <label>Proof Documents : </label> <br>
+            <a [href]="shop.proofIssue.fileUrl" target="_blank">
+              <img src="./assets/images/file-view.png" width="100%" height="500px">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-12">
+      <div class="form-group">
+        <!-- <button class="btn btn-primary" type="submit">Save</button>&nbsp; -->
+        <a class="btn btn-warning" [routerLink]="['/shops']">Cancel</a>
+      </div>
+    </div>
+  </div>
+</form>
